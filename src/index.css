@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+
+/* Tokens IA.3 — fonte canônica: ~/Documents/Code/identidades/ia3/tokens.json */
+@theme {
+  --color-coral: #E03A62;
+  --color-roxo: #9300FF;
+  --color-indigo: #353A8E;
+  --color-indigo-escuro: #252D65;
+  --color-turquesa: #28E2D4;
+  --color-rosa: #EFA1A1;
+  --color-grafite: #333333;
+  --color-hair: rgba(53, 58, 142, 0.18);
+  --color-pale: #F6F6FA;
+  --font-sans: 'Jost', 'Trebuchet MS', 'Century Gothic', Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #fff; color: var(--color-indigo); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--color-turquesa); outline-offset: 2px; }
+input:focus-visible { outline: none; }
+
+@layer components {
+.label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.pill { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 40px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; border: 1.5px solid var(--color-indigo); color: var(--color-indigo); background: #fff; transition: background 0.15s, color 0.15s; }
+.pill[aria-pressed='true'], .pill.is-active, .pill-dark { background: var(--color-indigo); color: #fff; }
+.card { border: 1.5px solid var(--color-hair); background: #fff; padding: 14px 16px; display: flex; align-items: flex-end; color: var(--color-indigo); }
+.card:hover { border-color: var(--color-indigo); }
+.card-sel { border-color: var(--color-indigo); background: var(--color-pale); }
+.bg-pale { background: var(--color-pale); }
+a { text-decoration: none; color: inherit; }
+.text-grafite a, p a { text-decoration: underline; }
+.pill-turq { border-color: var(--color-turquesa); background: var(--color-turquesa); color: #1a1a1a; }
+.pill-turq:hover { filter: brightness(0.95); }
+
+.tile { position: absolute; display: flex; flex-direction: column; justify-content: space-between; text-align: left; border: 0; padding: 14px; transition: filter 0.15s; }
+.tile:hover { filter: brightness(0.94); }
+.tile[aria-pressed='true'] { outline: 3px solid var(--color-indigo); outline-offset: -3px; }
+.tile.is-dim { filter: saturate(0.35) opacity(0.55); }
+.tile.is-dim:hover { filter: saturate(0.6) opacity(0.8); }
+
+}
+
+@media print { header, .print\:hidden { display: none !important; } body { color: #000; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
