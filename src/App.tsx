@@ -45,7 +45,11 @@ const Cluster = () => (
   </svg>
 );
 const Cobrand = ({ light = false }: { light?: boolean }) => (
-  <span className={`text-xs ${light ? 'text-white/85' : 'text-grafite/80'}`}>Realização <b>IDIS</b> · with support from <b>Google.org</b> · Parceiro técnico <b>Canal Sabiar</b></span>
+  <span className={`inline-flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs ${light ? 'text-white/85' : 'text-grafite/80'}`}>
+    <span>Realização <b>IDIS</b></span><span aria-hidden="true">·</span>
+    <span>Com apoio de <b>Google.org</b></span><span aria-hidden="true">·</span>
+    <span className="inline-flex items-center gap-1.5">Parceiro técnico <img src={light ? '/sabiar-escuro.svg' : '/sabiar-claro.svg'} alt="Canal Sabiar" className="h-[15px] w-auto opacity-90 relative top-[1px]" /></span>
+  </span>
 );
 const Back = ({ to, label = 'voltar' }: { to: string; label?: string }) => (
   <a href={to} className="inline-flex items-center gap-1.5 text-sm font-medium no-underline"><svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.4" fill="none"><path d="M15 5 L8 12 L15 19" /></svg>{label}</a>
