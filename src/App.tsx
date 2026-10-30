@@ -44,13 +44,25 @@ const Cluster = () => (
     <circle cx="370" cy="250" r="34" fill="#EFA1A1" /><circle cx="150" cy="74" r="46" stroke="#fff" strokeOpacity=".6" strokeWidth="1.2" />
   </svg>
 );
-const Cobrand = ({ light = false }: { light?: boolean }) => (
-  <span className={`inline-flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs ${light ? 'text-white/85' : 'text-grafite/80'}`}>
-    <span>Realização <b>IDIS</b></span><span aria-hidden="true">·</span>
-    <span>Com apoio de <b>Google.org</b></span><span aria-hidden="true">·</span>
-    <span className="inline-flex items-center gap-1.5">Parceiro técnico <img src={light ? '/sabiar-escuro.svg' : '/sabiar-claro.svg'} alt="Canal Sabiar" className="h-[15px] w-auto opacity-90 relative top-[1px]" /></span>
-  </span>
-);
+const Cobrand = ({ light = false }: { light?: boolean }) => {
+  const h = light ? 'h-[18px]' : 'h-[22px]';
+  const item = (label: string, src: string, alt: string, href: string, extra = '') => (
+    <div className="flex flex-col gap-1.5 items-start">
+      <span className={`text-[10px] tracking-[.12em] uppercase font-semibold ${light ? 'text-white/70' : 'text-grafite/60'}`}>{label}</span>
+      <a href={href} target="_blank" rel="noopener" className="inline-flex no-underline"><img src={src} alt={alt} className={`${h} w-auto ${light ? 'opacity-95' : ''} ${extra}`} /></a>
+    </div>
+  );
+  return (
+    <div className="flex flex-col items-start gap-4">
+      <div className="flex flex-wrap items-end gap-x-7 gap-y-3">
+        {item('Realização', light ? '/idis-branco.png' : '/idis.png', 'IDIS', 'https://www.idis.org.br/ia-ponto3/')}
+        {item('Com apoio de', light ? '/google-org-branco.png' : '/google-org.png', 'Google.org', 'https://www.google.org/')}
+        {item('Parceiro técnico', light ? '/sabiar-branco.svg' : '/sabiar-claro.svg', 'Canal Sabiar', 'https://www.canalsabiar.com.br/', 'relative top-[1px]')}
+      </div>
+      <span className={`text-[10px] tracking-[.02em] ${light ? 'text-white/60' : 'text-grafite/45'}`}>Feito com 💚 por <a href="https://www.linkedin.com/in/mardenrodrigues/" target="_blank" rel="noopener" className="underline underline-offset-2 decoration-[0.5px]" style={{ color: 'inherit' }}>Marden Rodrigues</a></span>
+    </div>
+  );
+};
 const Back = ({ to, label = 'voltar' }: { to: string; label?: string }) => (
   <a href={to} className="inline-flex items-center gap-1.5 text-sm font-medium no-underline"><svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.4" fill="none"><path d="M15 5 L8 12 L15 19" /></svg>{label}</a>
 );
@@ -96,7 +108,7 @@ function Home({ onAbout }: { onAbout: () => void }) {
           <a href={H.atua} className="pill pill-turq no-underline" style={{ minHeight: 54 }}>Encontrar vozes parecidas com a minha</a>
           <div className="flex gap-2.5"><a href={H.mapa()} className="pill flex-1 no-underline" style={{ borderColor: '#fff', color: '#fff', background: 'transparent' }}>Explorar o mapa</a><a href={H.atlas()} className="pill flex-1 no-underline" style={{ borderColor: '#fff', color: '#fff', background: 'transparent' }}>Ler o atlas</a></div>
         </div>
-        <div className="text-center"><Cobrand light /></div>
+        <Cobrand light />
       </div>
       <div className="hidden md:flex flex-col flex-1">
         <Header onAbout={onAbout} />
