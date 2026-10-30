@@ -32,8 +32,8 @@ const H = {
 const Arrow = ({ color = 'currentColor', size = 16 }: { color?: string; size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="4" cy="20" r="2.4" fill={color} /><path d="M8.5 15.5 L18 6" stroke={color} strokeWidth="3.4" /><path d="M9 5 H19 V15" stroke={color} strokeWidth="3.4" fill="none" /></svg>
 );
-const Logo = ({ color = '#353A8E', arrow = '#28E2D4', size = 26 }: { color?: string; arrow?: string; size?: number }) => (
-  <a href="#/" className="inline-flex items-end gap-px font-bold no-underline" style={{ color, fontSize: size, letterSpacing: '-.04em', lineHeight: 0.8 }} aria-label="IA.3, início"><span>ia</span><Arrow color={arrow} size={Math.round(size * 0.85)} /><span>3</span></a>
+const Logo = ({ light = false, size = 26 }: { light?: boolean; size?: number }) => (
+  <a href="#/" className="inline-flex no-underline" aria-label="IA.3, início"><img src={light ? '/ia3-branco.png' : '/ia3.png'} alt="IA.3" style={{ height: size, width: 'auto' }} /></a>
 );
 const Cluster = () => (
   <svg viewBox="0 0 420 300" fill="none" aria-hidden="true" className="w-full max-w-[420px] h-auto">
@@ -97,7 +97,7 @@ function Home({ onAbout }: { onAbout: () => void }) {
   return (
     <div className="min-h-screen flex flex-col">
       <div className="md:hidden bg-coral text-white flex-1 flex flex-col px-5 pt-4 pb-6 gap-4">
-        <div className="flex justify-between items-center pb-3 border-b border-white/25"><Logo color="#fff" /><button onClick={onAbout} className="pill" style={{ minHeight: 36, padding: '0 14px', fontSize: 11, borderColor: '#fff', color: '#fff', background: 'transparent' }}>Como ler</button></div>
+        <div className="flex justify-between items-center pb-3 border-b border-white/25"><Logo light /><button onClick={onAbout} className="pill" style={{ minHeight: 36, padding: '0 14px', fontSize: 11, borderColor: '#fff', color: '#fff', background: 'transparent' }}>Como ler</button></div>
         <div className="flex-1 flex flex-col justify-center gap-4">
           <span className="label opacity-85">Primeira turma do IA.3 · março de 2026</span>
           <h1 className="m-0 text-[40px] font-light leading-[1.02] uppercase">Um mapa feito de intenções reais</h1>
