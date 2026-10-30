@@ -59,7 +59,7 @@ const Cobrand = ({ light = false }: { light?: boolean }) => {
         {item('Com apoio de', light ? '/google-org-branco.png' : '/google-org.png', 'Google.org', 'https://www.google.org/')}
         {item('Parceiro técnico', light ? '/sabiar-branco.svg' : '/sabiar-claro.svg', 'Canal Sabiar', 'https://www.canalsabiar.com.br/', 'relative top-[1px]')}
       </div>
-      <span className={`text-[10px] tracking-[.02em] ${light ? 'text-white/60' : 'text-grafite/45'}`}>Feito com 💚 por <a href="https://www.linkedin.com/in/mardenrodrigues/" target="_blank" rel="noopener" className="underline underline-offset-2 decoration-[0.5px]" style={{ color: 'inherit' }}>Marden Rodrigues</a></span>
+      <span className={`text-[10px] tracking-[.02em] ${light ? 'text-white/60' : 'text-grafite/45'}`}>Feito com 💚 por <a href="https://www.linkedin.com/in/mardenrodrigues/" target="_blank" rel="noopener" className="underline underline-offset-2 decoration-[0.5px]" style={{ color: 'inherit' }}>Marden Rodrigues</a>, consultor associado <a href="https://www.canalsabiar.com.br/" target="_blank" rel="noopener" className="underline underline-offset-2 decoration-[0.5px]" style={{ color: 'inherit' }}>Canal SabIAr</a></span>
     </div>
   );
 };
