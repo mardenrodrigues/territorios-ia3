@@ -99,7 +99,7 @@ function Home({ onAbout }: { onAbout: () => void }) {
       <div className="md:hidden bg-coral text-white flex-1 flex flex-col px-5 pt-4 pb-6 gap-4">
         <div className="flex justify-between items-center pb-3 border-b border-white/25"><Logo light /><button onClick={onAbout} className="pill" style={{ minHeight: 36, padding: '0 14px', fontSize: 11, borderColor: '#fff', color: '#fff', background: 'transparent' }}>Como ler</button></div>
         <div className="flex-1 flex flex-col justify-center gap-4">
-          <span className="label opacity-85">Primeira turma do IA.3 · março de 2026</span>
+          <span className="label opacity-85">Primeira turma do IA.3 · 2026</span>
           <h1 className="m-0 text-[40px] font-light leading-[1.02] uppercase">Um mapa feito de intenções reais</h1>
           <p className="m-0 text-[17px] leading-[1.45]">{voices.length} pessoas de cerca de 100 organizações sociais contaram, com suas próprias palavras, como imaginam usar inteligência artificial no que fazem. Aqui essas vozes estão organizadas em territórios, para você se reconhecer nelas.</p>
           <div className="self-end w-[62%]"><Cluster /></div>
@@ -114,7 +114,7 @@ function Home({ onAbout }: { onAbout: () => void }) {
         <Header onAbout={onAbout} />
         <div className="flex-1 grid grid-cols-[500px_minmax(0,1fr)] gap-14 px-12 py-8 items-center">
           <div className="flex flex-col gap-5">
-            <span className="label text-coral">Primeira turma do IA.3 · março de 2026</span>
+            <span className="label text-coral">Primeira turma do IA.3 · 2026</span>
             <h1 className="m-0 text-[52px] font-light leading-[1.02] uppercase">Um mapa feito de intenções reais</h1>
             <p className="m-0 text-lg leading-[1.45] text-grafite">{voices.length} pessoas de cerca de 100 organizações sociais contaram, com suas próprias palavras, como imaginam usar inteligência artificial no que fazem. Aqui essas vozes estão organizadas em territórios, para você se reconhecer nelas.</p>
             <div className="inline-flex flex-col gap-2.5 self-start">
